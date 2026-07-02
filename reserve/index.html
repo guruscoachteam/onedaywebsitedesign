@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserve Your Build | One Day Website Design</title>
+  <meta name="description" content="Tell us about your business and reserve your One-Day Website Design build. $100 refundable deposit applied to your $999 site.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2366d9a0'/><text x='16' y='22' text-anchor='middle' font-family='system-ui' font-weight='800' font-size='16' fill='%2308130d'>1</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../" class="logo">
+        <div class="logo-mark">1</div>
+        <div class="logo-text">
+          <span class="logo-name">One Day Website Design</span>
+          <span class="logo-domain">onedaywebsitedesign.co</span>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav">
+        <a href="../#how">How it works</a>
+        <a href="../#pricing">Pricing</a>
+        <a href="../#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="reserve-page">
+    <div class="container reserve-layout">
+      <aside class="reserve-sidebar">
+        <div class="reserve-steps">
+          <div class="reserve-step reserve-step--active">
+            <span class="reserve-step-num">1</span>
+            <div>
+              <strong>Project brief</strong>
+              <span>Tell us about your business</span>
+            </div>
+          </div>
+          <div class="reserve-step">
+            <span class="reserve-step-num">2</span>
+            <div>
+              <strong>Pay deposit</strong>
+              <span>$100 via Whop · Refundable</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reserve-summary">
+          <span class="section-label">Your offer</span>
+          <div class="reserve-summary-price">$999 <span>one-time</span></div>
+          <p class="reserve-summary-note">$100 deposit today, applied to your total. Balance of $899 due after you approve your site.</p>
+          <ul class="reserve-summary-list">
+            <li>Built in 48 hours</li>
+            <li>Free hosting forever</li>
+            <li>Keyword-targeted for local search</li>
+            <li>Directory submissions included</li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="reserve-main">
+        <div class="reserve-intro">
+          <span class="section-label">Reserve your build</span>
+          <h1 class="reserve-title">Tell us about your business</h1>
+          <p class="reserve-lead">Fill in the details below so we can start your build the moment your deposit clears. Takes about 5 minutes.</p>
+        </div>
+
+        <form id="reserve-form" class="reserve-form" novalidate>
+
+          <fieldset class="form-section">
+            <legend class="form-section-title">Your details</legend>
+            <div class="form-grid form-grid--2">
+              <div class="form-field">
+                <label for="fullName">Full name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="Jane Smith">
+              </div>
+              <div class="form-field">
+                <label for="businessName">Business name <span class="required">*</span></label>
+                <input type="text" id="businessName" name="businessName" required placeholder="Smith Plumbing Co.">
+              </div>
+              <div class="form-field">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@yourbusiness.com">
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 123-4567">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend class="form-section-title">Location</legend>
+            <div class="form-grid form-grid--3">
+              <div class="form-field">
+                <label for="country">Country <span class="required">*</span></label>
+                <select id="country" name="country" required>
+                  <option value="">Select country</option>
+                  <option value="United States">United States</option>
+                  <option value="Canada">Canada</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="city">City <span class="required">*</span></label>
+                <input type="text" id="city" name="city" required placeholder="Austin">
+              </div>
+              <div class="form-field">
+                <label for="state">State / Province <span class="required">*</span></label>
+                <input type="text" id="state" name="state" required placeholder="TX">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="serviceArea">Primary service area <span class="required">*</span></label>
+              <input type="text" id="serviceArea" name="serviceArea" required placeholder="e.g. Austin metro area, within 30 miles of Denver">
+              <span class="form-hint">Where do most of your customers come from?</span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend class="form-section-title">Your business</legend>
+            <div class="form-grid form-grid--2">
+              <div class="form-field">
+                <label for="serviceType">Type of service business <span class="required">*</span></label>
+                <select id="serviceType" name="serviceType" required>
+                  <option value="">Select your industry</option>
+                  <option value="Plumbing">Plumbing</option>
+                  <option value="HVAC">HVAC</option>
+                  <option value="Electrical">Electrical</option>
+                  <option value="Landscaping">Landscaping</option>
+                  <option value="Cleaning">Cleaning</option>
+                  <option value="Dental">Dental</option>
+                  <option value="Medical / Healthcare">Medical / Healthcare</option>
+                  <option value="Legal">Legal</option>
+                  <option value="Fitness / Gym">Fitness / Gym</option>
+                  <option value="Auto repair">Auto repair</option>
+                  <option value="Pest control">Pest control</option>
+                  <option value="Roofing">Roofing</option>
+                  <option value="Real estate">Real estate</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="currentWebsite">Current website <span class="optional">(optional)</span></label>
+                <input type="url" id="currentWebsite" name="currentWebsite" placeholder="https://yourbusiness.com">
+                <span class="form-hint">Leave blank if you don't have one yet.</span>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="businessGoals">Tell us about your business and what you want from this website <span class="required">*</span></label>
+              <textarea id="businessGoals" name="businessGoals" required rows="5" placeholder="Who are your ideal customers? What services do you offer? What makes you different from competitors? What would a successful website do for your business?"></textarea>
+            </div>
+            <div class="form-field">
+              <label for="siteRequirements">What should the website include? <span class="required">*</span></label>
+              <textarea id="siteRequirements" name="siteRequirements" required rows="4" placeholder="Give us an overview — e.g. services list, service areas, testimonials, contact form, online booking, before/after photos, licenses &amp; certifications…"></textarea>
+              <span class="form-hint">A rough overview is fine. We'll focus the build around one high-intent keyword.</span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend class="form-section-title">Domain &amp; contact</legend>
+            <div class="form-field">
+              <span class="form-label">Do you already have a domain? <span class="required">*</span></span>
+              <div class="form-radio-group">
+                <label class="form-radio">
+                  <input type="radio" name="hasDomain" value="yes" required>
+                  <span>Yes, I have a domain</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="hasDomain" value="no">
+                  <span>No, I need help getting one</span>
+                </label>
+              </div>
+            </div>
+            <div id="domain-fields" class="form-field" hidden>
+              <label for="domainName">Your domain name</label>
+              <input type="text" id="domainName" name="domainName" placeholder="yourbusiness.com">
+            </div>
+            <div class="form-field">
+              <label for="contactPreference">How should customers reach you on the site? <span class="required">*</span></label>
+              <select id="contactPreference" name="contactPreference" required>
+                <option value="">Select preferred contact method</option>
+                <option value="Phone call">Phone call (click-to-call)</option>
+                <option value="Contact form">Contact form</option>
+                <option value="Online booking">Online booking link</option>
+                <option value="Email">Email</option>
+                <option value="Other">Other / combination</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="anythingElse">Anything else we should know? <span class="optional">(optional)</span></label>
+              <textarea id="anythingElse" name="anythingElse" rows="3" placeholder="Brand colors, logo availability, photos, competitors you admire, special requests…"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="form-footer">
+            <p class="form-disclaimer">By continuing, you'll be redirected to Whop to pay your <strong>$100 refundable deposit</strong>. The deposit is applied to your $999 total.</p>
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-primary-lg form-submit">Continue to payment — $100 deposit →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-logo">
+        <div class="logo-mark">1</div>
+        <span class="footer-logo-name">One Day Website Design</span>
+      </div>
+      <span class="footer-copy">onedaywebsitedesign.co · © 2026 · Built in a day, yours forever.</span>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/reserve.js"></script>
+</body>
+</html>

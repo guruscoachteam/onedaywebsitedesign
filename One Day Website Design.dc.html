@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>One-Day Website Design | Lead-Generating Sites Built in 48 Hours — $999</title>
+<meta name="description" content="One Day Website Design builds local service businesses a conversion-focused, SEO-ready website in 48 hours for $999 one-time. Free hosting forever. No retainers, no monthly fees.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Libre+Franklin:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  ::selection{background:var(--accent);color:var(--accent-ink)}
+</style>
+</helmet>
+
+<div style="{{ rootStyle }}">
+
+  <sc-if value="{{ showSwitcher }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;top:14px;right:14px;z-index:80;display:flex;align-items:center;gap:6px;background:var(--surface,#fff);border:1px solid var(--line,#e5e5e5);padding:6px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,0.14)">
+    <span style="font-family:var(--font-body);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);padding:0 6px 0 8px">Direction</span>
+    <sc-for list="{{ directions }}" as="dir" hint-placeholder-count="3">
+      <button onClick="{{ dir.onClick }}" style="{{ dir.style }}"><span style="{{ dir.dotStyle }}"></span>{{ dir.label }}</button>
+    </sc-for>
+  </div>
+  </sc-if>
+
+  <!-- ===== NAV ===== -->
+  <header style="position:sticky;top:0;z-index:60;background:var(--surface);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.1)">
+    <div style="max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <div style="display:flex;align-items:center;gap:11px">
+        <div style="width:34px;height:34px;border-radius:9px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:var(--accent-ink);font-family:var(--font-head);font-weight:800;font-size:17px">1</div>
+        <div style="display:flex;flex-direction:column;line-height:1.05">
+          <span style="font-family:var(--font-head);font-weight:700;font-size:15px;color:var(--ink);letter-spacing:-0.01em">One Day Website Design</span>
+          <span style="font-family:var(--font-body);font-size:11px;color:var(--muted);letter-spacing:0.02em">onedaywebsitedesign.co</span>
+        </div>
+      </div>
+      <nav style="display:flex;align-items:center;gap:26px">
+        <a href="#how" style="font-family:var(--font-body);font-size:14px;color:var(--muted);text-decoration:none">How it works</a>
+        <a href="#pricing" style="font-family:var(--font-body);font-size:14px;color:var(--muted);text-decoration:none">Pricing</a>
+        <a href="#faq" style="font-family:var(--font-body);font-size:14px;color:var(--muted);text-decoration:none">FAQ</a>
+        <a href="#pricing" style="font-family:var(--font-head);font-weight:600;font-size:14px;color:var(--accent-ink);background:var(--accent);padding:10px 16px;border-radius:9px;text-decoration:none">Reserve my build</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section data-screen-label="Hero" style="position:relative;overflow:hidden;background:var(--bg)">
+    <div style="max-width:1160px;margin:0 auto;padding:76px 24px 84px;display:grid;grid-template-columns:1.08fr 0.92fr;gap:56px;align-items:center">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:9px;background:var(--accent-soft);border:1px solid var(--line);padding:7px 14px;border-radius:999px;margin-bottom:22px">
+          <span style="width:8px;height:8px;border-radius:999px;background:var(--accent)"></span>
+          <span style="font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.02em;color:var(--ink)">One-Day Website Design for local businesses</span>
+        </div>
+        <h1 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(38px,5.4vw,62px);line-height:1.02;letter-spacing:-0.028em;color:var(--ink);margin-bottom:22px">Get a lead-generating website — built in <span style="color:var(--accent)">48 hours</span>, for $999.</h1>
+        <p style="font-family:var(--font-body);font-size:19px;line-height:1.55;color:var(--muted);max-width:520px;margin-bottom:30px">One flat payment. No retainers, no monthly "maintenance" fees, ever. We build your entire site around the exact keyword your customers type into Google when they're ready to buy.</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:16px">
+          <a href="#pricing" style="display:inline-flex;flex-direction:column;align-items:flex-start;gap:2px;background:var(--accent);color:var(--accent-ink);font-family:var(--font-head);font-weight:700;padding:15px 26px;border-radius:12px;text-decoration:none" style-hover="filter:brightness(1.06)">
+            <span style="font-size:17px">Reserve my build — $100 today</span>
+            <span style="font-size:12px;font-weight:500;opacity:0.85">Applied to your $999. Refundable.</span>
+          </a>
+          <a href="#how" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-weight:600;font-size:15px;color:var(--ink);border:1px solid var(--line);padding:16px 22px;border-radius:12px;text-decoration:none">See how it works →</a>
+        </div>
+        <p style="font-family:var(--font-body);font-size:14px;color:var(--muted);margin-bottom:26px">The $100 deposit comes straight off the $999 — you pay nothing more until you've approved your site.</p>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <div style="display:flex;gap:2px;color:var(--accent)">
+            <span style="font-size:17px">★</span><span style="font-size:17px">★</span><span style="font-size:17px">★</span><span style="font-size:17px">★</span><span style="font-size:17px">★</span>
+          </div>
+          <span style="font-family:var(--font-body);font-size:14px;color:var(--muted)">Trusted by plumbers, dentists, gyms &amp; other local service businesses</span>
+        </div>
+      </div>
+
+      <div style="position:relative">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 70px -30px rgba(0,0,0,0.35);overflow:hidden">
+          <div style="display:flex;align-items:center;gap:6px;padding:12px 14px;border-bottom:1px solid var(--line)">
+            <span style="width:10px;height:10px;border-radius:999px;background:var(--line)"></span>
+            <span style="width:10px;height:10px;border-radius:999px;background:var(--line)"></span>
+            <span style="width:10px;height:10px;border-radius:999px;background:var(--line)"></span>
+            <span style="margin-left:8px;font-family:var(--font-body);font-size:11px;color:var(--muted)">yourbusiness.com</span>
+          </div>
+          <div style="aspect-ratio:4/3;background-image:repeating-linear-gradient(45deg,var(--line) 0,var(--line) 1px,transparent 1px,transparent 11px);background-color:var(--bg);display:flex;align-items:center;justify-content:center">
+            <span style="font-family:ui-monospace,monospace;font-size:12px;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:8px">your new website mockup</span>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:-18px;left:-18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;box-shadow:0 16px 40px -18px rgba(0,0,0,0.4);display:flex;flex-direction:column;gap:2px">
+          <span style="font-family:var(--font-head);font-weight:800;font-size:22px;color:var(--ink)">48 hrs</span>
+          <span style="font-family:var(--font-body);font-size:12px;color:var(--muted)">to first draft</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPARISON ===== -->
+  <section data-screen-label="Comparison" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div style="max-width:1160px;margin:0 auto;padding:88px 24px">
+      <div style="text-align:center;max-width:640px;margin:0 auto 52px">
+        <span style="font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)">The math most agencies hope you never do</span>
+        <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(30px,4vw,44px);line-height:1.06;letter-spacing:-0.02em;color:var(--ink);margin-top:14px">The usual deal vs. the One Day deal</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+        <div style="border:1px solid var(--line);border-radius:16px;padding:32px;background:var(--bg)">
+          <span style="font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)">Typical agency</span>
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:34px;color:var(--ink);margin:12px 0 4px;text-decoration:line-through;text-decoration-color:var(--accent);text-decoration-thickness:2px">$3,000–$10,000</div>
+          <p style="font-family:var(--font-body);font-size:14px;color:var(--muted);margin-bottom:20px">plus $100–$500/month, forever</p>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--muted);font-size:15px;line-height:1.4">✕</span><span style="font-family:var(--font-body);font-size:15px;color:var(--muted);line-height:1.45">Locked into monthly retainers for "maintenance" &amp; "SEO"</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--muted);font-size:15px;line-height:1.4">✕</span><span style="font-family:var(--font-body);font-size:15px;color:var(--muted);line-height:1.45">You keep paying whether or not you get customers</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--muted);font-size:15px;line-height:1.4">✕</span><span style="font-family:var(--font-body);font-size:15px;color:var(--muted);line-height:1.45">Weeks or months before you see a first draft</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--muted);font-size:15px;line-height:1.4">✕</span><span style="font-family:var(--font-body);font-size:15px;color:var(--muted);line-height:1.45">Hosting &amp; renewal fees stacked on top</span></div>
+          </div>
+        </div>
+        <div style="border:1.5px solid var(--accent);border-radius:16px;padding:32px;background:var(--surface);position:relative;box-shadow:0 24px 60px -34px var(--accent)">
+          <span style="position:absolute;top:-12px;left:32px;background:var(--accent);color:var(--accent-ink);font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.04em;padding:5px 12px;border-radius:999px">One Day Website Design</span>
+          <span style="font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)">One flat payment</span>
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:34px;color:var(--ink);margin:12px 0 4px">$999 one-time</div>
+          <p style="font-family:var(--font-body);font-size:14px;color:var(--muted);margin-bottom:20px">$0/month. You never pay us again unless you want more work.</p>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">Built around one high-intent keyword your buyers actually search</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">First draft in your hands within 48 hours</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">Free hosting forever — once it's live, it's yours</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">Local directory submissions included from day one</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS ===== -->
+  <section data-screen-label="What you get" style="background:var(--bg)">
+    <div style="max-width:1160px;margin:0 auto;padding:88px 24px">
+      <div style="max-width:660px;margin-bottom:48px">
+        <span style="font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)">What's included</span>
+        <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(30px,4vw,44px);line-height:1.06;letter-spacing:-0.02em;color:var(--ink);margin-top:14px">Everything a local business needs to get found and get calls</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px">
+          <div style="width:44px;height:44px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:var(--font-head);font-weight:800;font-size:19px;margin-bottom:18px">◎</div>
+          <h3 style="font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:9px;letter-spacing:-0.01em">A conversion-focused site</h3>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted)">Built around one high-intent keyword. We research exactly what your customers type into Google when they're ready to buy, then build your entire site to capture that search.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px">
+          <div style="width:44px;height:44px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:var(--font-head);font-weight:800;font-size:19px;margin-bottom:18px">⚡</div>
+          <h3 style="font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:9px;letter-spacing:-0.01em">Delivered in 48 hours</h3>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted)">Your first version is in your hands for review within 2 business days — not 2 months. Review, request tweaks, and go live fast.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px">
+          <div style="width:44px;height:44px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:var(--font-head);font-weight:800;font-size:19px;margin-bottom:18px">∞</div>
+          <h3 style="font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:9px;letter-spacing:-0.01em">Free hosting, forever</h3>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted)">No monthly bills, no renewal traps. Once it's live, it's yours. You never pay us again unless you decide you want more work done.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px">
+          <div style="width:44px;height:44px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:var(--font-head);font-weight:800;font-size:19px;margin-bottom:18px">◈</div>
+          <h3 style="font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:9px;letter-spacing:-0.01em">Local directory submissions</h3>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted)">We list your business across relevant directories in your city, state, and country to strengthen your local visibility from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how" data-screen-label="How it works" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div style="max-width:1160px;margin:0 auto;padding:88px 24px">
+      <div style="text-align:center;max-width:640px;margin:0 auto 56px">
+        <span style="font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)">Start to live in days, not months</span>
+        <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(30px,4vw,44px);line-height:1.06;letter-spacing:-0.02em;color:var(--ink);margin-top:14px">How One-Day Website Design works</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+        <div style="position:relative;padding-top:8px">
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:15px;color:var(--accent-ink);background:var(--accent);width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;margin-bottom:18px">1</div>
+          <h3 style="font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--ink);margin-bottom:8px">Reserve your slot</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--muted)">Put down a $100 commitment fee to lock in your build. It's deducted from the $999 — and it's refundable under our guarantee.</p>
+        </div>
+        <div style="position:relative;padding-top:8px">
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:15px;color:var(--accent-ink);background:var(--accent);width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;margin-bottom:18px">2</div>
+          <h3 style="font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--ink);margin-bottom:8px">We research your keyword</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--muted)">We find the exact high-intent search your ideal customers use when they're ready to buy — and plan your whole site around it.</p>
+        </div>
+        <div style="position:relative;padding-top:8px">
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:15px;color:var(--accent-ink);background:var(--accent);width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;margin-bottom:18px">3</div>
+          <h3 style="font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--ink);margin-bottom:8px">We build in 48 hours</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--muted)">Your conversion-focused draft lands in your inbox within 2 business days for review. Nothing more to pay until you approve it.</p>
+        </div>
+        <div style="position:relative;padding-top:8px">
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:15px;color:var(--accent-ink);background:var(--accent);width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;margin-bottom:18px">4</div>
+          <h3 style="font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--ink);margin-bottom:8px">Approve &amp; go live</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--muted)">Pay the remaining balance, we publish to free hosting and submit your local directory listings. The site is yours to keep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEYWORD / SEO ===== -->
+  <section data-screen-label="Keyword focus" style="background:var(--bg)">
+    <div style="max-width:1160px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:0.95fr 1.05fr;gap:56px;align-items:center">
+      <div>
+        <span style="font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)">Why one keyword beats ten pages</span>
+        <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;color:var(--ink);margin:14px 0 20px">We build around what your customers are actually searching</h2>
+        <p style="font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--muted);margin-bottom:18px">A "one day website design" for a plumber isn't the same as one for a dentist. The words matter. When someone types <em>"emergency plumber near me"</em> at 11pm, your site should be the one that shows up — and the one that gets the call.</p>
+        <p style="font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--muted)">So we start with the search, not the design. Every headline, section, and call-to-action is built to capture that one high-intent keyword and turn visitors into booked jobs.</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 26px 60px -34px rgba(0,0,0,0.35)">
+        <div style="display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;padding:13px 16px;margin-bottom:18px">
+          <span style="color:var(--muted);font-size:16px">⌕</span>
+          <span style="font-family:var(--font-body);font-size:15px;color:var(--ink)">emergency plumber near me</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="border:1.5px solid var(--accent);background:var(--accent-soft);border-radius:11px;padding:15px 16px">
+            <div style="font-family:var(--font-body);font-size:12px;color:var(--muted);margin-bottom:4px">yourbusiness.com</div>
+            <div style="font-family:var(--font-head);font-weight:700;font-size:16px;color:var(--ink);margin-bottom:4px">24/7 Emergency Plumber — On-Site in 60 Min</div>
+            <div style="font-family:var(--font-body);font-size:13px;color:var(--muted);line-height:1.45">Licensed local plumbers. No call-out fee. Book online in 30 seconds.</div>
+          </div>
+          <div style="border:1px solid var(--line);border-radius:11px;padding:15px 16px;opacity:0.6">
+            <div style="height:9px;width:55%;border-radius:4px;background:var(--line);margin-bottom:9px"></div>
+            <div style="height:9px;width:80%;border-radius:4px;background:var(--line);margin-bottom:7px"></div>
+            <div style="height:9px;width:70%;border-radius:4px;background:var(--line)"></div>
+          </div>
+          <div style="border:1px solid var(--line);border-radius:11px;padding:15px 16px;opacity:0.6">
+            <div style="height:9px;width:48%;border-radius:4px;background:var(--line);margin-bottom:9px"></div>
+            <div style="height:9px;width:75%;border-radius:4px;background:var(--line)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GUARANTEE ===== -->
+  <section data-screen-label="Guarantee" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div style="max-width:920px;margin:0 auto;padding:88px 24px;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:9px;background:var(--accent-soft);border:1px solid var(--line);padding:8px 16px;border-radius:999px;margin-bottom:24px">
+        <span style="color:var(--accent);font-size:15px">◆</span>
+        <span style="font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:0.04em;color:var(--ink)">The 48-hour guarantee, in plain English</span>
+      </div>
+      <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(30px,4.4vw,48px);line-height:1.06;letter-spacing:-0.025em;color:var(--ink);margin-bottom:24px">If we miss 48 hours, you get a full refund — and we finish the site anyway, free.</h2>
+      <p style="font-family:var(--font-body);font-size:19px;line-height:1.6;color:var(--muted);max-width:660px;margin:0 auto 36px">You keep the website. We keep nothing. You risk $0 — we risk our time. That's how confident we are that you'll love what we build.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left">
+        <div style="border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--bg)">
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:26px;color:var(--accent);margin-bottom:8px">$0</div>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.55;color:var(--muted)">Your risk. The $100 deposit is fully refundable if we miss the deadline.</p>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--bg)">
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:26px;color:var(--accent);margin-bottom:8px">100%</div>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.55;color:var(--muted)">Refunded if your first draft isn't delivered within 48 hours — no arguing.</p>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--bg)">
+          <div style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:26px;color:var(--accent);margin-bottom:8px">Yours</div>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.55;color:var(--muted)">We still finish and hand over the site, free. It's yours to keep either way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" data-screen-label="Pricing" style="background:var(--bg)">
+    <div style="max-width:1160px;margin:0 auto;padding:88px 24px">
+      <div style="text-align:center;max-width:620px;margin:0 auto 48px">
+        <span style="font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)">One price. Everything in.</span>
+        <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(30px,4vw,44px);line-height:1.06;letter-spacing:-0.02em;color:var(--ink);margin-top:14px">Reserve your One-Day Website Design</h2>
+      </div>
+      <div style="max-width:720px;margin:0 auto;background:var(--surface);border:1.5px solid var(--accent);border-radius:20px;overflow:hidden;box-shadow:0 34px 80px -40px var(--accent)">
+        <div style="padding:38px 40px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:18px">
+          <div>
+            <div style="font-family:var(--font-body);font-size:14px;color:var(--muted);margin-bottom:8px">Complete website, built in 48 hours</div>
+            <div style="display:flex;align-items:baseline;gap:12px">
+              <span style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:56px;letter-spacing:-0.02em;color:var(--ink);line-height:1">$999</span>
+              <span style="font-family:var(--font-body);font-size:16px;color:var(--muted)">one-time</span>
+            </div>
+            <div style="font-family:var(--font-body);font-size:14px;color:var(--muted);margin-top:8px">Then $0/month — free hosting forever.</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-family:var(--font-body);font-size:13px;color:var(--muted);text-decoration:line-through">Agencies: $3k–$10k + monthly</div>
+          </div>
+        </div>
+        <div style="padding:32px 40px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-bottom:28px">
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">Conversion-focused, keyword-targeted build</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">High-intent keyword research included</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">First draft within 48 hours</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">Free hosting, forever</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">Local directory submissions</span></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--accent);font-size:15px;line-height:1.4">✓</span><span style="font-family:var(--font-body);font-size:15px;color:var(--ink);line-height:1.45">48-hour refund guarantee</span></div>
+          </div>
+          <div style="background:var(--accent-soft);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--accent);font-size:16px;line-height:1.3">◆</span>
+            <p style="font-family:var(--font-body);font-size:14px;line-height:1.55;color:var(--ink)"><strong>Start with just $100 today.</strong> That commitment fee reserves your build and is deducted from the $999 — so your balance is only $899, due after you approve your site.</p>
+          </div>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-family:var(--font-head);font-weight:700;font-size:18px;padding:18px 26px;border-radius:13px;text-decoration:none" style-hover="filter:brightness(1.06)">Reserve my build — $100 today →</a>
+          <p style="font-family:var(--font-body);font-size:13px;color:var(--muted);text-align:center;margin-top:14px">Refundable deposit · No monthly fees, ever · You keep the site</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section data-screen-label="Testimonials" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div style="max-width:1160px;margin:0 auto;padding:88px 24px">
+      <div style="text-align:center;max-width:600px;margin:0 auto 48px">
+        <div style="display:flex;justify-content:center;gap:3px;color:var(--accent);margin-bottom:14px;font-size:18px">★★★★★</div>
+        <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;color:var(--ink)">Local businesses that stopped paying monthly</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <div style="border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--bg)">
+          <div style="color:var(--accent);font-size:15px;margin-bottom:14px">★★★★★</div>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);margin-bottom:22px">"Had my draft in a day and a half. I was quoted $6,000 elsewhere plus $200 a month. This paid for itself with the first two jobs it booked."</p>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:40px;height:40px;border-radius:999px;background:var(--accent-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;color:var(--accent);font-size:15px">MR</div>
+            <div><div style="font-family:var(--font-head);font-weight:700;font-size:14px;color:var(--ink)">[Client name]</div><div style="font-family:var(--font-body);font-size:13px;color:var(--muted)">[Plumbing co. · City]</div></div>
+          </div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--bg)">
+          <div style="color:var(--accent);font-size:15px;margin-bottom:14px">★★★★★</div>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);margin-bottom:22px">"No retainer, no surprise invoices. It's my site, it's fast, and it actually shows up when people search for my service in my town."</p>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:40px;height:40px;border-radius:999px;background:var(--accent-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;color:var(--accent);font-size:15px">DK</div>
+            <div><div style="font-family:var(--font-head);font-weight:700;font-size:14px;color:var(--ink)">[Client name]</div><div style="font-family:var(--font-body);font-size:13px;color:var(--muted)">[Dental practice · City]</div></div>
+          </div>
+        </div>
+        <div style="border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--bg)">
+          <div style="color:var(--accent);font-size:15px;margin-bottom:14px">★★★★★</div>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--ink);margin-bottom:22px">"Simplest decision I made all year. One payment, live in 48 hours, and the directory listings got us found immediately."</p>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:40px;height:40px;border-radius:999px;background:var(--accent-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;color:var(--accent);font-size:15px">SL</div>
+            <div><div style="font-family:var(--font-head);font-weight:700;font-size:14px;color:var(--ink)">[Client name]</div><div style="font-family:var(--font-body);font-size:13px;color:var(--muted)">[Fitness studio · City]</div></div>
+          </div>
+        </div>
+      </div>
+      <p style="font-family:var(--font-body);font-size:13px;color:var(--muted);text-align:center;margin-top:24px">Replace the bracketed placeholders with your real client names, businesses, and quotes.</p>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" data-screen-label="FAQ" style="background:var(--bg)">
+    <div style="max-width:820px;margin:0 auto;padding:88px 24px">
+      <div style="text-align:center;margin-bottom:44px">
+        <span style="font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)">Questions, answered</span>
+        <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(30px,4vw,44px);line-height:1.06;letter-spacing:-0.02em;color:var(--ink);margin-top:14px">One-Day Website Design FAQ</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <details style="background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px">
+          <summary style="font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--ink);cursor:pointer;list-style:none">Is it really just $999, with nothing monthly?</summary>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted);margin-top:12px">Yes. $999 is a one-time payment for the whole site. Hosting is free forever, and there are no retainers or maintenance fees. You only pay again if you choose to hire us for additional work later.</p>
+        </details>
+        <details style="background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px">
+          <summary style="font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--ink);cursor:pointer;list-style:none">What's the $100 for?</summary>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted);margin-top:12px">It's a commitment fee that reserves your build slot so we can start immediately. It's deducted from the $999 — your remaining balance is $899, due only after you've reviewed and approved your site. And it's fully refundable under our 48-hour guarantee.</p>
+        </details>
+        <details style="background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px">
+          <summary style="font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--ink);cursor:pointer;list-style:none">How can you build a website in 48 hours?</summary>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted);margin-top:12px">We focus. Instead of a sprawling multi-page project, we build a sharp, conversion-focused site around one high-intent keyword. That focus is exactly why it's fast — and why it works.</p>
+        </details>
+        <details style="background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px">
+          <summary style="font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--ink);cursor:pointer;list-style:none">What happens if you miss the 48-hour deadline?</summary>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted);margin-top:12px">You get a full refund of your deposit, and we finish the site anyway — free. You keep the website. You risk nothing.</p>
+        </details>
+        <details style="background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px">
+          <summary style="font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--ink);cursor:pointer;list-style:none">Do I own the website?</summary>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted);margin-top:12px">Completely. Once it's live, it's yours to keep — hosted free, with no lock-in. If you ever want to move it or change it, you're free to.</p>
+        </details>
+        <details style="background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px">
+          <summary style="font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--ink);cursor:pointer;list-style:none">What are local directory submissions?</summary>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--muted);margin-top:12px">We list your business across relevant online directories in your city, state, and country. It strengthens your local visibility so customers nearby can find you from day one — included at no extra cost.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section data-screen-label="Final CTA" style="background:var(--accent)">
+    <div style="max-width:900px;margin:0 auto;padding:88px 24px;text-align:center">
+      <h2 style="font-family:var(--font-head);font-weight:var(--wt-head);font-size:clamp(32px,4.6vw,50px);line-height:1.04;letter-spacing:-0.025em;color:var(--accent-ink);margin-bottom:20px">Your lead-generating website, live this week.</h2>
+      <p style="font-family:var(--font-body);font-size:19px;line-height:1.55;color:var(--accent-ink);opacity:0.9;max-width:560px;margin:0 auto 34px">$999 one-time. Built in 48 hours. Free hosting forever. Reserve your build with a refundable $100 — you risk nothing.</p>
+      <a href="#pricing" style="display:inline-flex;align-items:center;gap:10px;background:var(--surface);color:var(--ink);font-family:var(--font-head);font-weight:700;font-size:18px;padding:18px 32px;border-radius:13px;text-decoration:none" style-hover="filter:brightness(0.97)">Reserve my build — $100 today →</a>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:var(--surface);border-top:1px solid var(--line)">
+    <div style="max-width:1160px;margin:0 auto;padding:44px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <div style="display:flex;align-items:center;gap:11px">
+        <div style="width:30px;height:30px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:var(--accent-ink);font-family:var(--font-head);font-weight:800;font-size:15px">1</div>
+        <span style="font-family:var(--font-head);font-weight:700;font-size:14px;color:var(--ink)">One Day Website Design</span>
+      </div>
+      <span style="font-family:var(--font-body);font-size:13px;color:var(--muted)">onedaywebsitedesign.co · © 2026 · Built in a day, yours forever.</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;direction&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;bold&quot;,&quot;trust&quot;,&quot;premium&quot;],&quot;default&quot;:&quot;bold&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;showSwitcher&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+  themes = {
+    bold: {
+      label: 'Bold', bg: '#FBF6F1', surface: '#FFFFFF', ink: '#1A1512', muted: '#7A6E64',
+      line: '#EBE1D6', accent: 'oklch(0.63 0.19 34)', accentInk: '#FFFFFF',
+      accentSoft: 'oklch(0.63 0.19 34 / 0.10)', fontHead: "'Archivo', sans-serif",
+      fontBody: "'Archivo', sans-serif", wtHead: 800
+    },
+    trust: {
+      label: 'Trust', bg: '#F5F8FC', surface: '#FFFFFF', ink: '#111826', muted: '#5C6675',
+      line: '#E2E8F1', accent: 'oklch(0.55 0.15 254)', accentInk: '#FFFFFF',
+      accentSoft: 'oklch(0.55 0.15 254 / 0.09)', fontHead: "'Libre Franklin', sans-serif",
+      fontBody: "'Libre Franklin', sans-serif", wtHead: 700
+    },
+    premium: {
+      label: 'Premium', bg: '#0F1311', surface: '#161B18', ink: '#EEF2EE', muted: '#96A29A',
+      line: '#28302B', accent: 'oklch(0.74 0.15 158)', accentInk: '#08130D',
+      accentSoft: 'oklch(0.74 0.15 158 / 0.14)', fontHead: "'Space Grotesk', sans-serif",
+      fontBody: "'Instrument Sans', sans-serif", wtHead: 600
+    }
+  };
+  order = ['bold', 'trust', 'premium'];
+  state = { dir: 'bold' };
+
+  componentDidMount() {
+    const p = this.props.direction;
+    if (p && this.themes[p]) this.setState({ dir: p });
+  }
+
+  renderVals() {
+    const dir = this.themes[this.state.dir] ? this.state.dir : 'bold';
+    const t = this.themes[dir];
+    const rootStyle = {
+      background: t.bg, color: t.ink, minHeight: '100vh', fontFamily: t.fontBody,
+      '--bg': t.bg, '--surface': t.surface, '--ink': t.ink, '--muted': t.muted,
+      '--line': t.line, '--accent': t.accent, '--accent-ink': t.accentInk,
+      '--accent-soft': t.accentSoft, '--font-head': t.fontHead, '--font-body': t.fontBody,
+      '--wt-head': String(t.wtHead)
+    };
+    const directions = this.order.map(id => {
+      const th = this.themes[id];
+      const active = id === dir;
+      return {
+        id, label: th.label,
+        onClick: () => this.setState({ dir: id }),
+        style: {
+          display: 'flex', alignItems: 'center', gap: '7px', padding: '7px 12px',
+          borderRadius: '999px', border: active ? '1px solid ' + th.accent : '1px solid transparent',
+          background: active ? th.accentSoft : 'transparent', color: t.ink,
+          fontFamily: t.fontBody, fontSize: '13px', fontWeight: 600, cursor: 'pointer'
+        },
+        dotStyle: { width: '9px', height: '9px', borderRadius: '999px', background: th.accent, display: 'inline-block' }
+      };
+    });
+    return { rootStyle, directions, showSwitcher: this.props.showSwitcher ?? true };
+  }
+}
+</script>
+</body>
+</html>

@@ -16,7 +16,7 @@ window.SITE_CONFIG = {
    * Sign up at https://formspree.io → create a form → paste the endpoint URL.
    * Leave empty to skip (form data still saved in browser until payment).
    */
-  formspreeEndpoint: "",
+  formspreeEndpoint: "https://formspree.io/f/mykqboaw",
 
   successPage: "/reserve/success.html",
 };

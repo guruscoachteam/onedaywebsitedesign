@@ -1344,6 +1344,99 @@ a {
 
 /* ===== RESERVE FORM ===== */
 
+/* White form cards on dark page background */
+.reserve-form {
+  --form-ink: #122018;
+  --form-muted: #5f6b64;
+  --form-line: #e5e7eb;
+  --form-input-border: #d1d5db;
+  --form-accent-soft: rgba(36, 143, 92, 0.12);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.reserve-form .form-section,
+.reserve-form .form-footer {
+  background: #ffffff;
+  border-color: var(--form-line);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.reserve-form .form-section-title {
+  color: var(--form-ink);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--form-line);
+}
+
+.reserve-form .form-field label,
+.reserve-form .form-label {
+  color: var(--form-ink);
+  font-weight: 600;
+}
+
+.reserve-form .form-hint,
+.reserve-form .form-disclaimer {
+  color: var(--form-muted);
+}
+
+.reserve-form .form-disclaimer strong {
+  color: var(--form-ink);
+}
+
+.reserve-form .optional {
+  color: var(--form-muted);
+}
+
+.reserve-form .required {
+  color: #1a7a4e;
+}
+
+.reserve-form .form-field input,
+.reserve-form .form-field textarea,
+.reserve-form .form-field select {
+  background-color: #ffffff;
+  border-color: var(--form-input-border);
+  color: var(--form-ink);
+}
+
+.reserve-form .form-field input::placeholder,
+.reserve-form .form-field textarea::placeholder {
+  color: var(--form-muted);
+  opacity: 0.85;
+}
+
+.reserve-form .form-field select {
+  color-scheme: light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234a6356' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.reserve-form .form-field select option {
+  background-color: #ffffff;
+  color: var(--form-ink);
+}
+
+.reserve-form .form-radio {
+  background-color: #f9fafb;
+  border-color: var(--form-input-border);
+  color: var(--form-ink);
+}
+
+.reserve-form .form-radio:has(input:checked) {
+  background: #f3f4f6;
+  border-color: var(--accent);
+}
+
+.reserve-form .form-field input:focus,
+.reserve-form .form-field select:focus,
+.reserve-form .form-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--form-accent-soft);
+}
+
 .reserve-page {
   padding: 48px 0 88px;
 }
@@ -1490,12 +1583,6 @@ a {
   margin-bottom: 36px;
 }
 
-.reserve-form {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
 .form-section {
   border: none;
   background: var(--surface);
@@ -1560,17 +1647,40 @@ a {
 }
 
 .form-field input,
-.form-field select,
 .form-field textarea {
   width: 100%;
   font-family: var(--font-body);
   font-size: 15px;
   color: var(--ink);
-  background: var(--bg);
+  background-color: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   padding: 12px 14px;
   transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-field select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px 36px 12px 14px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2396a29a' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  color-scheme: dark;
+}
+
+.form-field select option {
+  background-color: #1c2420;
+  color: #eef2ee;
 }
 
 .form-field input::placeholder,
@@ -1585,15 +1695,6 @@ a {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
-}
-
-.form-field select {
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2396a29a' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
 }
 
 .form-field textarea {

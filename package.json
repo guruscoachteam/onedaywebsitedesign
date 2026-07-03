@@ -7,6 +7,9 @@
     "dev": "python3 -m http.server 8080",
     "deploy": "wrangler pages deploy . --project-name=onedaywebsitedesign"
   },
+  "dependencies": {
+    "stripe": "^18.0.0"
+  },
   "devDependencies": {
     "wrangler": "^4.107.0"
   }

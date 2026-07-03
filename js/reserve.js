@@ -7,7 +7,6 @@
 
   if (!form) return;
 
-  // Mobile nav (shared pattern)
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".site-nav");
   if (toggle && nav) {
@@ -55,15 +54,6 @@
       form.reportValidity();
       return false;
     }
-
-    const whopUrl = config.whopCheckoutUrl || "";
-    if (!whopUrl || whopUrl.includes("REPLACE_ME")) {
-      alert(
-        "Payment is not configured yet. Add your Whop checkout URL in js/config.js."
-      );
-      return false;
-    }
-
     return true;
   }
 
@@ -89,6 +79,25 @@
     return true;
   }
 
+  async function createStripeCheckout(data) {
+    const endpoint = config.checkoutEndpoint || "/api/create-checkout";
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json().catch(function () {
+      return {};
+    });
+
+    if (!response.ok || !result.url) {
+      throw new Error(result.error || "Could not start secure checkout. Please try again.");
+    }
+
+    return result.url;
+  }
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
     if (!validateForm()) return;
@@ -101,8 +110,9 @@
       sessionStorage.setItem("odwd_reservation", JSON.stringify(data));
       await sendToFormspree(data);
 
-      submitBtn.textContent = "Redirecting to payment…";
-      window.location.href = config.whopCheckoutUrl;
+      submitBtn.textContent = "Redirecting to secure checkout…";
+      const checkoutUrl = await createStripeCheckout(data);
+      window.location.href = checkoutUrl;
     } catch (err) {
       submitBtn.disabled = false;
       submitBtn.textContent = "Continue to payment — $100 deposit →";

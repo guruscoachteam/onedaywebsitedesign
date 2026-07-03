@@ -1,22 +1,18 @@
 /**
- * Site configuration — update these before going live.
+ * Site configuration
  *
- * WHOP CHECKOUT
- * 1. In Whop Dashboard → Checkout links → Create checkout link
- * 2. Set pricing to $100 one-time (your deposit product)
- * 3. Under "Redirect after checkout", set:
- *    https://onedaywebsitedesign.co/reserve/success.html
- * 4. Copy the checkout URL and paste it below.
+ * STRIPE (via Cloudflare Pages Function)
+ * 1. Create a Stripe account at https://dashboard.stripe.com
+ * 2. Add secrets to Cloudflare Pages:
+ *      npx wrangler pages secret put STRIPE_SECRET_KEY --project-name=onedaywebsitedesign
+ *      npx wrangler pages secret put STRIPE_WEBHOOK_SECRET --project-name=onedaywebsitedesign
+ * 3. In Stripe Dashboard → Developers → Webhooks, add endpoint:
+ *      https://onedaywebsitedesign.pages.dev/api/stripe-webhook
+ *    Event: checkout.session.completed
+ * 4. Use test keys (sk_test_...) first, then switch to live (sk_live_...) when ready.
  */
 window.SITE_CONFIG = {
-  whopCheckoutUrl: "https://whop.com/checkout/plan_REPLACE_ME",
-
-  /**
-   * Optional: Formspree endpoint to email yourself each submission.
-   * Sign up at https://formspree.io → create a form → paste the endpoint URL.
-   * Leave empty to skip (form data still saved in browser until payment).
-   */
+  checkoutEndpoint: "/api/create-checkout",
   formspreeEndpoint: "https://formspree.io/f/mykqboaw",
-
   successPage: "/reserve/success.html",
 };

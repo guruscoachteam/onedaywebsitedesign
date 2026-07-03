@@ -205,6 +205,7 @@
 
           <div class="form-footer">
             <p class="form-disclaimer">By continuing, you'll be redirected to Stripe to pay your <strong>$100 refundable deposit</strong>. The deposit is applied to your $999 total.</p>
+            <div id="turnstile-widget" class="turnstile-field" aria-label="Security check"></div>
             <button type="submit" id="submit-btn" class="btn btn-primary btn-primary-lg form-submit">Continue to payment — $100 deposit →</button>
           </div>
         </form>
@@ -223,6 +224,7 @@
   </footer>
 
   <script src="../js/config.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
   <script src="../js/reserve.js"></script>
 </body>
 </html>

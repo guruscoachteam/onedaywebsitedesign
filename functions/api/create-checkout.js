@@ -12,6 +12,21 @@ function jsonResponse(body, status = 200) {
   });
 }
 
+async function verifyTurnstile(token, secret, remoteip) {
+  const body = new FormData();
+  body.append("secret", secret);
+  body.append("response", token);
+  if (remoteip) body.append("remoteip", remoteip);
+
+  const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    body,
+  });
+
+  const result = await response.json();
+  return result.success === true;
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -27,6 +42,18 @@ export async function onRequestPost(context) {
     data = await request.json();
   } catch {
     return jsonResponse({ error: "Invalid request body." }, 400);
+  }
+
+  const turnstileToken = (data.turnstileToken || "").trim();
+  if (env.TURNSTILE_SECRET_KEY) {
+    if (!turnstileToken) {
+      return jsonResponse({ error: "Please complete the security check." }, 400);
+    }
+    const remoteip = request.headers.get("CF-Connecting-IP") || "";
+    const captchaValid = await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, remoteip);
+    if (!captchaValid) {
+      return jsonResponse({ error: "Security check failed. Please try again." }, 403);
+    }
   }
 
   const email = (data.email || "").trim();

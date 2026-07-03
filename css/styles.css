@@ -1762,6 +1762,13 @@ a {
   width: 100%;
 }
 
+.turnstile-field {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  min-height: 65px;
+}
+
 /* ===== SUCCESS PAGE ===== */
 
 .success-page {

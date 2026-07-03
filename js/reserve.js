@@ -4,6 +4,7 @@
   const domainFields = document.getElementById("domain-fields");
   const hasDomainRadios = form?.querySelectorAll('input[name="hasDomain"]');
   const config = window.SITE_CONFIG || {};
+  let turnstileWidgetId = null;
 
   if (!form) return;
 
@@ -24,6 +25,43 @@
     });
   }
 
+  function isTurnstileConfigured() {
+    const key = config.turnstileSiteKey || "";
+    return key && !key.includes("REPLACE");
+  }
+
+  function initTurnstile() {
+    if (!isTurnstileConfigured()) return;
+
+    const container = document.getElementById("turnstile-widget");
+    if (!container) return;
+
+    function renderWidget() {
+      if (!window.turnstile || turnstileWidgetId !== null) return;
+      turnstileWidgetId = window.turnstile.render(container, {
+        sitekey: config.turnstileSiteKey,
+        theme: "light",
+      });
+    }
+
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      window.addEventListener("load", renderWidget);
+    }
+  }
+
+  function getTurnstileToken() {
+    if (!isTurnstileConfigured()) return "";
+    if (!window.turnstile || turnstileWidgetId === null) return "";
+    return window.turnstile.getResponse(turnstileWidgetId) || "";
+  }
+
+  function resetTurnstile() {
+    if (!window.turnstile || turnstileWidgetId === null) return;
+    window.turnstile.reset(turnstileWidgetId);
+  }
+
   function toggleDomainFields() {
     const selected = form.querySelector('input[name="hasDomain"]:checked');
     const show = selected && selected.value === "yes";
@@ -38,6 +76,7 @@
     radio.addEventListener("change", toggleDomainFields);
   });
   toggleDomainFields();
+  initTurnstile();
 
   function getFormData() {
     const data = new FormData(form);
@@ -54,6 +93,12 @@
       form.reportValidity();
       return false;
     }
+
+    if (isTurnstileConfigured() && !getTurnstileToken()) {
+      alert("Please complete the security check before continuing.");
+      return false;
+    }
+
     return true;
   }
 
@@ -81,10 +126,14 @@
 
   async function createStripeCheckout(data) {
     const endpoint = config.checkoutEndpoint || "/api/create-checkout";
+    const payload = Object.assign({}, data, {
+      turnstileToken: getTurnstileToken(),
+    });
+
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
     });
 
     const result = await response.json().catch(function () {
@@ -104,18 +153,21 @@
 
     const data = getFormData();
     submitBtn.disabled = true;
-    submitBtn.textContent = "Saving your brief…";
+    submitBtn.textContent = "Verifying…";
 
     try {
+      submitBtn.textContent = "Saving your brief…";
+      const checkoutUrl = await createStripeCheckout(data);
+
       sessionStorage.setItem("odwd_reservation", JSON.stringify(data));
       await sendToFormspree(data);
 
       submitBtn.textContent = "Redirecting to secure checkout…";
-      const checkoutUrl = await createStripeCheckout(data);
       window.location.href = checkoutUrl;
     } catch (err) {
       submitBtn.disabled = false;
       submitBtn.textContent = "Continue to payment — $100 deposit →";
+      resetTurnstile();
       alert(err.message || "Something went wrong. Please try again.");
     }
   });
